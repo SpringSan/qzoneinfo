@@ -7,6 +7,6 @@
 ##一共爬取了六万多条说说
 
 ###登录界面
-![登录](https://github.com/chunquansang/qzoneinfo/displayimgs/login.png)
+![登录](https://github.com/chunquansang/qzoneinfo/blob/master/displayimgs/login.png)
 ###注册界面
-![注册](https://github.com/chunquansang/qzoneinfo/displayimgs/signup.png)
+![注册](https://github.com/chunquansang/qzoneinfo/blob/master/displayimgs/signup.png)
