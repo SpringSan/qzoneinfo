@@ -9,5 +9,6 @@
 ### 登录界面
 ![登录](https://github.com/chunquansang/qzoneinfo/blob/master/displayimgs/login.png)
 <img src="https://github.com/chunquansang/qzoneinfo/blob/master/login.png" width="150" height="150" alt="图片加载失败时，显示这段字"/>
+<div align=center><img src="https://github.com/chunquansang/qzoneinfo/blob/master/displayimgs/login.png" width="300" height="450" /></div>
 ### 注册界面
 ![注册](https://github.com/chunquansang/qzoneinfo/blob/master/displayimgs/signup.png)
