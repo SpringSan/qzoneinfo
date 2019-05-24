@@ -1,0 +1,200 @@
+ol,ul{list-style:none;padding:0;margin:0;}
+
+*, body { font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+body { margin-bottom: 30px; }
+h1 {
+	font-weight: 300;
+	font-size: 36px;
+	line-height: normal;
+	margin: auto;
+	margin-top: 30px;
+	text-align: center;
+}
+h2 {
+	font-weight: 500;
+	font-size: 20px;
+	line-height: normal;
+	margin: auto;
+	margin-bottom: 30px;
+	text-align: center;
+	color: #09F;
+}
+
+.green { color: #3C3; }
+.gray { color: #999; }
+
+.form-horizontal .control-label { text-align: left; }
+.control-wrapper {
+	position: relative;
+	padding-left: 30px;
+}
+.control-wrapper label.fa-label {
+	position: absolute;
+	left: 4px;
+	top: 6px;
+}
+.form-group:last-child { margin-bottom: 0; }
+.form-horizontal .control-label { margin-bottom: 10px; }
+.table { margin-bottom: 0; }
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th,
+.table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+	vertical-align: middle;
+}
+.template-form-list-container { max-width: 600px; }
+.template-input-icon-container { position: relative; }
+.template-input-icon-container .fa {
+	color: gray;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+.template-input-icon-container input,
+.template-input-icon-container textarea {
+	padding-left: 30px;
+}
+.template-container {
+	background-color: rgba(255,255,255,0.8);
+	border: 1px solid #dedede;
+	border-radius: 8px;
+	margin: 0 auto;
+	padding: 30px;
+}
+.template-bg-gray { background-color: #eee; }
+.template-bg-gray h1 { color: rgb(74, 164, 180); }
+
+.font-size-small { font-size: 0.8em; }
+.margin-bottom-15 {	margin-bottom: 15px; }
+.margin-bottom-30 {	margin-bottom: 30px; }
+.form-group { margin-bottom: 20px; }
+.form-group a {	line-height: 34px; }
+.fa { font-size: 16px; }
+.fa.login-with {
+	font-size: 30px;
+	margin: 0 5px;
+}
+.fa-medium { font-size: 20px; }
+.inline-block { display: inline-block; }
+
+/*-------------------------------------
+2. login-form
+---------------------------------------*/
+.template-login-form {
+	max-width: 400px;
+}
+.template-login-form a { color: gray; }
+.template-login-form a:hover {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+.template-create-new {
+	color: #58B4BB;
+	font-size: 18px;
+	font-weight: 300;
+}
+.template-create-new:hover {
+	color: #138892;
+	text-decoration: none;
+}
+
+/*-------------------------------------
+5. create-account
+---------------------------------------*/
+.template-create-account {
+	background-color: #fff;
+	border: none;
+	max-width: 380px;
+	height: 1200px;
+}
+.template-create-account label { font-weight: 400; }
+.template-create-account input[type='checkbox'] {
+	margin-right: 10px;
+	position: relative;
+	top: -1.5px;
+}
+.template-radio-group { margin-top: 30px; }
+
+
+/*-------------------------------------
+6. forgot-password
+---------------------------------------*/
+.template-forgot-password-form {
+	background-color: #fff;
+	max-width: 550px;
+	margin: 0 auto;
+	padding: 30px;
+}
+
+
+/*-------------------------------------
+7. contact-form
+---------------------------------------*/
+.template-contact-form {
+	background: rgba(0,0,0,0.6);
+	border-radius: 8px;
+	color: rgb(197,197,197);
+	max-width: 600px;
+	margin: 30px auto 0 auto;
+	padding: 0 30px 30px 30px;
+}
+.template-contact-form h1, .template-contact-form p { color: rgb(255,255,255); }
+.template-contact-form a {
+	color: #FF9;
+	text-decoration: underline;
+}
+.template-contact-form a:hover { color: rgb(255,255,255); }
+.template-contact-form label { font-weight: 400;}
+.template-contact-form .form-control {
+	font-size: 16px;
+	padding: 10px 12px 10px 35px;
+}
+.template-contact-form input.form-control {	height: 45px; }
+.template-contact-form .fa { font-size: 20px; }
+.template-contact-form .form-control {
+	background-color: rgba(0, 0, 0, 0.6);
+	border: 1px solid rgba(176, 176, 176, 0.4);
+	color: white;
+}
+.template-contact-form .form-control:focus {
+	box-shadow: inset 0 1px 1px rgba(140, 220, 60, 0.7),0 0 10px rgba(140, 220, 60, 0.7);
+}
+.template-contact-form .template-input-icon-container .fa {
+	color: rgb(197,197,197);
+	left: 12px;
+	top: 12px;
+}
+.template-contact-form .template-input-icon-container .fa-envelope-o {
+	font-size: 18px;
+	top: 14px;
+}
+
+
+
+
+/*-------------------------------------
+10. Media Queries
+---------------------------------------*/
+@media screen and (max-width: 767px) {
+	.template-header .col-md-12 {	line-height: 20px; }
+	.template-header .btn { margin-bottom: 15px; }
+	.template-container {	padding: 15px; }
+	.control-wrapper label.fa-label { top: 6px;	}
+	.template-header form { margin-top: 0; }
+}
+@media screen and (max-width: 991px) {
+	.template-one-signin {
+		border-right: none;
+		border-bottom: 1px solid rgba(200, 200, 200, 0.5);
+	}
+	.template-other-signin {	padding-top: 30px; }
+	.form-group:last-child { margin-bottom: 30px; }
+	.template-create-account .col-md-6, .template-create-account .col-md-12 {
+		padding-bottom: 15px;
+	}
+	.template-create-account .form-group { margin-bottom: 0; }
+	.template-radio-group { margin-top: 0; }
+	.checkbox {	margin-bottom: 15px; }
+	.template-radio-container { margin-left: 30px; }
+}
+
+/* three login*/

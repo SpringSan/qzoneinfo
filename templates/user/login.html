@@ -1,0 +1,149 @@
+{% extends 'user/base.html' %}
+{% load staticfiles %}
+<title>{% block title %}登录{% endblock %}</title>
+{% block css %}
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'bootstrap-3.3.7-dist/css/bootstrap-theme.min.css' %}" rel="stylesheet">
+{#    <link rel="stylesheet" href="{% static 'css/login.css' %}">#}
+{% endblock %}
+{% block script %}
+
+{% endblock %}
+
+{% block content %}
+{#    <script type="text/javascript">#}
+{#        $(function () {#}
+{#            isRememer = '{{ request.session.user.isRemember }}';#}
+{#            if (isRememer === 'True'){#}
+{#                username = '{{ request.session.user.username }}';#}
+{#                password = '{{ request.session.user.password }}';#}
+{#                $('#username').attr('value', username);#}
+{#                $('#password').attr('value', password);#}
+{#            }#}
+{##}
+{#        })#}
+{#    </script>#}
+    <script type="text/javascript">
+        $(function () {
+            $('#btnLogin').click(function () {
+                username = $('#username').val();
+                password = $('#password').val();
+                vcode = $('#vcode').val();
+                rememberme = $('#rememberMe').val();
+                $.ajaxSetup({
+                    data:{csrfmiddlewaretoken:'{{ csrf_token }}'},
+                });
+                $.ajax({
+                    type: 'POST',
+                    url: 'login_ajax_check',
+                    dataType: 'json',
+                    data: {username: username, password: password, vcode: vcode, rememberme: rememberme},
+                    success: function (data) {
+                        if(data.message === 'ok'){
+                            location.href='index'
+                        }
+                        else if (data.message ==='pass_failed'){
+                            $('#errorMsg').show().text('亲！密码错误！');
+                            document.getElementById('password').value='';
+                            document.getElementById('vcode').value='';
+                        }
+                        else if (data.message ==='code_failed'){
+                            $('#errorMsg').show().text('亲！验证码错误！');
+                            document.getElementById('password').value='';
+                            document.getElementById('vcode').value='';
+                        }
+                        else if (data.message ==='user_failed'){
+                            $('#errorMsg').show().text('亲！此用户不存在！');
+                            document.getElementById('password').value='';
+                            document.getElementById('vcode').value='';
+                        }
+                    }
+                })
+            })
+        });
+        $(function () {
+            $('#codeImg').click(function () {
+                $.ajax({
+                    type: 'GET',
+                    url: 'code',
+                    success: function () {
+                        $('#codeImg').attr('src', src='/static/images/verifycode.png'+'?t=' + Math.random());
+                    }
+                })
+            })
+        });
+    </script>
+    {% if message == 'signupok' %}
+        <script type="text/javascript">
+        alert("恭喜您！注册成功！确认返回登录界面");
+        </script>
+    {% endif %}
+    <div class="container">
+        <div class="col-md-12">
+            <h1 class="margin-bottom-15">欢迎登录</h1>
+            <div class="form-horizontal template-container template-login-form margin-bottom-30" id="myForm">
+                {% csrf_token %}
+                <div id="errorMsg" class="text-center text-danger margin-bottom-15"></div>
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="control-wrapper">
+                            <label for="username" class="control-label fa-label"><i class="fa fa-user fa-medium"></i></label>
+		            	    <input type="text" class="form-control" id="username" placeholder="Username">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="control-wrapper">
+                            <label for="password" class="control-label fa-label"><i class="fa fa-lock fa-medium"></i></label>
+		            	    <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox control-wrapper">
+                        <label class="text-left pull-left">
+                            <input id="rememberMe" type="checkbox">记住我
+                        </label>
+                        <lable  class="text-right pull-right">
+                            <a href="forgotpassword">忘记密码？</a>
+                        </lable>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="col-md-8">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-add">验证码</span>
+                                <input type="text" class="form-control" aria-describedby="basic-add" id="vcode">
+                            </div>
+
+                        </div>
+                        <div class="col-md-4">
+                            <a href="#"><img id="codeImg" src="/static/images/verifycode.png" alt=""></a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <div class="control-wrapper">
+                        <input type="submit" value="登录" class="btn btn-info" id="btnLogin">
+                        <a href="/signup" class="pull-right template-create-new">没有账户？<i class="fa fa-arrow-circle-o-right"></i></a>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <p class="text-center">-其他方式登录-</p>
+                        <div class="text-center">
+                            <a href="#"><i class="fa fa-qq login-with"></i></a>
+			        		<a href="#"><i class="fa fa-wechat login-with"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

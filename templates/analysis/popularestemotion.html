@@ -1,0 +1,15 @@
+{% extends 'user/basemain.html' %}
+{% load staticfiles %}
+{% block title %}最受欢迎的说说{% endblock %}
+{% block analysiscontent %}
+    <div id="popularestcontainer"></div>
+    <div id="popularest" style="width: 1600px; height: 800px;">
+        <br>
+        <p class="text-primary" style="font-size: 15px;">最受欢迎的说说是由</p>
+        <p class="text-warning">&nbsp;&nbsp;&nbsp;{{ popularest.publisher.nick }}</p>
+        <p class="text-success">在&nbsp;{{ popularest.create_time }}&nbsp;发布的。</p>
+        <p class="text-warning">发布的内容是:  </p>
+        <p class="text-danger">{{ popularest.content }}。</p>
+    </div>
+
+{% endblock %}

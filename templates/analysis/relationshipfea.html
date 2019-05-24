@@ -1,0 +1,104 @@
+{% extends 'user/basemain.html' %}
+{% load staticfiles %}
+{% block title %}人际关系网络{% endblock %}
+{% block analysiscontent %}
+    <div id="relationshipfeacontainer"></div>
+    <div id="relationshipfea" style="width: 1200px; height: 1400px;"></div>
+    <script type="text/javascript">
+	var relationshipfeaChart = echarts.init(document.getElementById('relationshipfea'));
+	var option={
+        title: {
+            text:"qq好友关系网"
+            },
+             series: [{
+                itemStyle: {
+                    normal: {
+                        label: {
+                            position: 'top',
+                            show: true,
+                            textStyle: {
+                                color: '#333'
+                            }
+                        },
+                        nodeStyle: {
+                            brushType: 'both',
+                            borderColor: 'rgba(255,215,0,0.4)',
+                            borderWidth: 1
+                        },
+                        linkStyle: {
+                            normal: {
+                                color: 'source',
+                                curveness: 0,
+                                type: "solid"
+                            }
+                        },
+                        force: {
+				            edgeLength: [100,200],//线的长度，这个距离也会受 repulsion，支持设置成数组表达边长的范围
+				            repulsion: 100//节点之间的斥力因子。值越大则斥力越大
+				        }
+                    },
+                },
+                     force:{
+                    initLayout: 'circular',//初始布局
+                    repulsion:200,//斥力大小
+                },
+                hoverAnimation: true,//是否开启鼠标悬停节点的显示动画
+                name:"",
+                type: 'graph',//关系图类型
+                layout: 'force',//引力布局
+                roam: true,//可以拖动
+                draggable: true,
+                focusNodeAdjacency:true,//移到节点高亮显示临边
+              //  legendHoverLink: true,//是否启用图例 hover(悬停) 时的联动高亮。
+               // coordinateSystem: null,//坐标系可选
+              //  xAxisIndex: 0, //x轴坐标 有多种坐标系轴坐标选项
+              //  yAxisIndex: 0, //y轴坐标
+               // ribbonType: true,
+                useWorker: false,
+                minRadius: 15,
+                maxRadius: 25,
+                gravity: 1.1,
+                scaling: 1.1,
+                "categories": [//关系网类别，可以写多组
+
+                {
+                "name": "人物关系网络1",//关系网名称
+                "keyword": {},
+                "base": "人物关系"
+                },
+                    {
+                "name": "人物关系网络2",//关系网名称
+                "keyword": {},
+                "base": "人物关系"
+                },
+
+        ],
+                "nodes": [
+                    {% for key, value in nodes.items %}
+                {
+                    "name": "{{ value.name }}",
+                    "id": "{{ key }}",
+                    "category": {{ value.catagory }}
+                },
+            {% endfor %}],
+                "links": [{% for i, j, k in reladata %}
+                {
+                    "source": {{ i }},
+                    "target": {{ j }},
+                    "lineStyle": {
+                        "width": {{ k }},
+                    }
+                },
+                    {
+                    "source": 273,
+                    "target": 274,
+                    "lineStyle": {
+                        "width": 1,
+                    }
+                },
+            {% endfor %}]
+            } ]
+    };
+    relationshipfeaChart.setOption(option);//将option添加到mychart中
+    </script>
+{% endblock %}

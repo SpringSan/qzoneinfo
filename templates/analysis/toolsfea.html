@@ -1,0 +1,81 @@
+{% extends 'user/basemain.html' %}
+{% load staticfiles %}
+{% block title %}设备特征{% endblock %}
+
+{% block analysiscontent %}
+    <div id="toolsfeacontainer"></div>
+    <div id="toolsfea" style="width: 1000px; height: 400px;"></div>
+    <script type="text/javascript">
+        var toolsfeaChart = echarts.init(document.getElementById('toolsfea'));
+        var option = {
+            title: {
+                text: '好友用多少不同终端发布说说'
+            },
+            xAxis: {
+                type: 'category',
+                axisLabel: {
+                    interval:0,
+                    rotate:40
+                },
+                data: {{ user_tag | safe }}
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [{
+                data: {{ tools_count_tag | safe }},
+                type: 'bar',
+                markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            }]
+        };
+
+        toolsfeaChart.setOption(option);
+    </script>
+    <div id="brandfea" style="width: 1000px; height: 400px;"></div>
+    <script type="text/javascript">
+        var brandfeaChart = echarts.init(document.getElementById('brandfea'));
+        var option = {
+            title : {
+                text: '好友所用终端设备品牌',
+                subtext: '具体占比',
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: {{ brand_tag | safe}}
+            },
+            series : [
+                {
+                    name: '设备占比',
+                    type: 'pie',
+                    radius : '55%',
+                    center: ['50%', '60%'],
+                    data:[
+                        {% for key, value in brands.items %}
+                            {value: {{ value }}, name: '{{ key }}' },
+                        {% endfor %}
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+
+        brandfeaChart.setOption(option);
+    </script>
+{% endblock  %}

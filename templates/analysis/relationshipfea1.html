@@ -1,0 +1,77 @@
+{% extends 'user/basemain.html' %}
+{% load staticfiles %}
+{% block title %}人际关系网络{% endblock %}
+{% block analysiscontent %}
+    <div id="relationshipfeacontainer"></div>
+    <div id="relationshipfea" style="width: 1200px; height: 1400px;"></div>
+    <script type="text/javascript">
+
+        var relationshipfeaChart = echarts.init(document.getElementById('relationshipfea'));
+        relationshipfeaChart.showLoading();
+        var webkitDep = {
+        "type": "force",
+        "categories": [//关系网类别，可以写多组
+            {% for num in components %}
+               {
+                "name": "人物关系网络",//关系网名称
+                "keyword": {},
+                "base": "人物关系"
+                }
+            {% endfor %}
+
+        ],
+        "nodes": [//展示的节点
+            {% for key, value in nodes.items %}
+                {
+                    "name": "{{ value.name }}",
+                    "id": "{{ key }}",
+                    "category": {{ value.catagory }}
+                },
+            {% endfor %}
+
+        ],
+        "links": [//节点之间连接
+            {% for i, j, k in reladata %}
+                {
+                    "source": {{ i }},
+                    "target": {{ j }},
+                    "lineStyle": {
+                        "width": {{ k }},
+                        "color": "green"
+                    }
+                },
+            {% endfor %}
+        ]
+    };
+        relationshipfeaChart.hideLoading();
+
+        option = {
+            legend: {
+                data: ['人物关系']//此处的数据必须和关系网类别中name相对应
+            },
+            series: [{
+                type: 'graph',
+                layout: 'force',
+                animation: false,
+                label: {
+                    normal: {
+                        show:true,
+                        position: 'right'
+                    }
+                },
+                draggable: true,
+                data: webkitDep.nodes.map(function (node, idx) {
+                    node.id = idx;
+                    return node;
+                }),
+                categories: webkitDep.categories,
+                force: {
+                    edgeLength: 300,//连线的长度
+                    repulsion: 100  //子节点之间的间距
+                },
+                edges: webkitDep.links
+            }]
+        };
+        relationshipfeaChart.setOption(option);
+    </script>
+{% endblock %}

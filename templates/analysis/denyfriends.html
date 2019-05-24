@@ -1,0 +1,25 @@
+{% extends 'user/basemain.html' %}
+{% load staticfiles %}
+{% block title %}屏蔽你的好友{% endblock %}
+{% block analysiscontent %}
+    <div id="denyfriendscontainer"></div>
+    <div id="denyfriends" style="width: 1600px; height: 800px;">
+    <table>
+    {% for denyfriend in deny_friends %}
+                    <div class="user-panel" style="float: left; width: 200px">
+
+                        <div class="pull-left image">
+                        <img src="{% static 'images/qqimg' %}/{{ denyfriend.qq }}.png" class="img-circle" alt="User Image">
+                        </div>
+                        <div class="pull-left info" style="float: left">
+                        <p style="color: black">{{ denyfriend.name }}</p>
+                    <!-- Status -->
+                         </div>
+
+                    </div>
+
+    {% endfor %}
+    </table>
+    </div>
+
+{% endblock %}

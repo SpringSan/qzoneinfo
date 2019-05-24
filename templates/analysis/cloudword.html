@@ -1,0 +1,10 @@
+{% extends 'user/basemain.html' %}
+{% load staticfiles %}
+{% block title %}好友词云{% endblock %}
+{% block analysiscontent %}
+    <div id="cloudwordcontainer"></div>
+    <div id="cloudword" style="width: 800px; height: 600px;">
+        <img src="{% static 'images/analysis/cloud.png' %}" alt="">
+    </div>
+
+{% endblock %}

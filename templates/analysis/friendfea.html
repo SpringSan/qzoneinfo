@@ -1,0 +1,116 @@
+{% extends 'user/basemain.html' %}
+{% load staticfiles %}
+{% block title %}好友特征{% endblock %}
+
+{% block analysiscontent %}
+    <div id="friendfeacontainer"></div>
+    {% if similarest_friend %}
+    <div id="similarfriend" style="width: 1000px; height: 100px;">
+        <div class="user-panel" style="float: left; width: 200px">
+            <div class="pull-left image">
+            <img src="{% static 'images/qqimg' %}/{{ similarest_friend.qq }}.png" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info" style="float: left">
+            <p style="color: black">{{ similarest_friend.nick }}</p>
+        <!-- Status -->
+             </div>
+            <div class="pull-right"><p style="color: darkred">这位好友与你的好友{{ friend_qq.nick }}说话风格很相似哦</p></div>
+
+        </div>
+    </div>
+    {% endif %}
+    <div id="friendyearfea" style="width: 1000px; height: 400px;"></div>
+    <script type="text/javascript">
+        var friendyearfeaChart = echarts.init(document.getElementById('friendyearfea'));
+        var option = {
+            title: {
+                text: '好友年发表说说次数'
+            },
+            tooltip: {},
+            legend: {
+                data:['年次数']
+            },
+            xAxis: {
+                data: {{ year_tag | safe}},
+            },
+            yAxis: {},
+            series: [{
+                name: '次数',
+                data: {{ year_count_tag | safe}},
+                type: 'line',
+                markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'average', name: '平均值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            }]
+        };
+        friendyearfeaChart.setOption(option);
+    </script>
+    <div id="friendhourfea" style="width: 1000px; height: 400px;"></div>
+    <script type="text/javascript">
+        var friendhourfeaChart = echarts.init(document.getElementById('friendhourfea'));
+        var option = {
+            title: {
+                text: '好友每小时发表说说次数'
+            },
+            tooltip: {},
+            legend: {
+                data:['每小时次数']
+            },
+            xAxis: {
+                data: {{ hour_tag | safe}},
+            },
+            yAxis: {},
+            series: [{
+                name: '次数',
+                data: {{ hour_count_tag | safe}},
+                type: 'line',
+                markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'average', name: '平均值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            }]
+        };
+        friendhourfeaChart.setOption(option);
+    </script>
+    <div id="frienddayfea" style="width: 1000px; height: 400px;"></div>
+    <script type="text/javascript">
+        var frienddayfeaChart = echarts.init(document.getElementById('frienddayfea'));
+        var option = {
+            title: {
+                text: '好友每天发表说说次数'
+            },
+            tooltip: {},
+            legend: {
+                data:['每天次数']
+            },
+            xAxis: {
+                axisLabel: {
+                    interval:0,
+                    rotate:40
+                },
+
+                data: {{ day_tag | safe}},
+            },
+            yAxis: {},
+            series: [{
+                name: '次数',
+                data: {{ day_count_tag | safe}},
+                type: 'line',
+                markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            },
+            }]
+        };
+        frienddayfeaChart.setOption(option);
+    </script>
+{% endblock %}
