@@ -13,7 +13,7 @@
 ### 主页
 <div align=center><img src="https://github.com/chunquansang/qzoneinfo/blob/master/displayimgs/index.png" width="500" height="350" /></div>
 ### 好友列表
-<div align=center><img src="https://github.com/chunquansang/qzoneinfo/blob/master/displayimgs/friends.png" width="500" height="350" /></div>
+<div align=center><img src="https://github.com/chunquansang/qzoneinfo/blob/master/displayimgs/friends.png"  /></div>
 ### 好友相似网络
 <div align=center><img src="https://github.com/chunquansang/qzoneinfo/blob/master/displayimgs/relationship.png" width="500" height="350" /></div>
 ### 好友词云
@@ -21,7 +21,7 @@
 ### 好友说说特征
 <div align=center><img src="https://github.com/chunquansang/qzoneinfo/blob/master/displayimgs/shuoshuo.png" width="500" height="350" /></div>
 ### 相似好友
-<div align=center><img src="https://github.com/chunquansang/qzoneinfo/blob/master/displayimgs/similar.png" width="500" height="350" /></div>
+<div align=center><img src="https://github.com/chunquansang/qzoneinfo/blob/master/displayimgs/similar.png" /></div>
 ### 屏蔽好友
 <div align=center><img src="https://github.com/chunquansang/qzoneinfo/blob/master/displayimgs/pingbi.png" width="500" height="350" /></div>
 ### 设备特征
