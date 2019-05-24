@@ -7,24 +7,34 @@
 ## 一共爬取了六万多条说说
 
 ### 登录界面
-<div align=center><img src="https://github.com/chunquansang/qzoneinfo/blob/master/displayimgs/login.png" width="500" height="350" /></div>
+<div align=center><img src="https://github.com/chunquansang/qzoneinfo/blob/master/displayimgs/login.png" width="500 height="350"/ ></div>  
+  
 ### 注册界面
 <div align=center><img src="https://github.com/chunquansang/qzoneinfo/blob/master/displayimgs/login.png" width="500" height="350" /></div>
+
 ### 主页
 <div align=center><img src="https://github.com/chunquansang/qzoneinfo/blob/master/displayimgs/index.png" width="500" height="350" /></div>
+
 ### 好友列表
 <div align=center><img src="https://github.com/chunquansang/qzoneinfo/blob/master/displayimgs/friends.png"  /></div>
+
 ### 好友相似网络
 <div align=center><img src="https://github.com/chunquansang/qzoneinfo/blob/master/displayimgs/relationship.png" width="500" height="350" /></div>
+
 ### 好友词云
 <div align=center><img src="https://github.com/chunquansang/qzoneinfo/blob/master/displayimgs/cloud.png" width="500" height="350" /></div>
+
 ### 好友说说特征
 <div align=center><img src="https://github.com/chunquansang/qzoneinfo/blob/master/displayimgs/shuoshuo.png" width="500" height="350" /></div>
+
 ### 相似好友
 <div align=center><img src="https://github.com/chunquansang/qzoneinfo/blob/master/displayimgs/similar.png" /></div>
+
 ### 屏蔽好友
 <div align=center><img src="https://github.com/chunquansang/qzoneinfo/blob/master/displayimgs/pingbi.png" width="500" height="350" /></div>
+
 ### 设备特征
 <div align=center><img src="https://github.com/chunquansang/qzoneinfo/blob/master/displayimgs/tools.png" width="500" height="350" /></div>
+
 ### 位置特征
 <div align=center><img src="https://github.com/chunquansang/qzoneinfo/blob/master/displayimgs/map.png" width="500" height="350" /></div>
