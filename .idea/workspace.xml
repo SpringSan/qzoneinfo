@@ -23,7 +23,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/analysis/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
+            <state relative-caret-position="5758">
               <caret line="496" selection-start-line="496" selection-end-line="496" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
@@ -135,6 +135,9 @@
       <replace>friend</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -197,13 +200,29 @@
     <option name="width" value="1440" />
     <option name="height" value="798" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="qzoneinfo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qzoneinfo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qzoneinfo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qzoneinfo" type="462c0819:PsiDirectoryNode" />
+              <item name="analysis" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -371,11 +390,12 @@
       <workItem from="1557470279985" duration="1014000" />
       <workItem from="1557536509369" duration="282000" />
       <workItem from="1557808576839" duration="25000" />
+      <workItem from="1558684987474" duration="26000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="333743000" />
+    <option name="totallyTimeSpent" value="333769000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -389,7 +409,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="798" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49822694" visible="true" weight="0.2360515" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49822694" visible="true" weight="0.23891273" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50177306" side_tool="true" weight="0.1915836" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -747,7 +767,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/analysis/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
+        <state relative-caret-position="5758">
           <caret line="496" selection-start-line="496" selection-end-line="496" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
