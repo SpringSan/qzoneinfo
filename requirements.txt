@@ -5,7 +5,7 @@ bz2file==0.98
 certifi==2018.11.29
 chardet==3.0.4
 cycler==0.10.0
-Django==2.1.7
+Django==2.2.10
 django-bootstrap3==11.0.0
 docutils==0.14
 dukpy==0.2.2
