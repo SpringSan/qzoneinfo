@@ -14,7 +14,7 @@ gensim==3.7.1
 idna==2.8
 javascripthon==0.10
 jieba==0.39
-Jinja2==2.10
+Jinja2==2.11.3
 jmespath==0.9.4
 jupyter-echarts-pypkg==0.1.2
 kiwisolver==1.0.1
