@@ -23,7 +23,7 @@ lxml==4.3.3
 macropy3==1.1.0b2
 MarkupSafe==1.1.1
 matplotlib==3.0.3
-numpy==1.16.2
+numpy==1.22.0
 pbr==5.2.0
 Pillow==5.4.1
 pyecharts==0.5.11
